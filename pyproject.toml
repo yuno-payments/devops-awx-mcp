@@ -24,9 +24,9 @@ dev = [
 ]
 
 [tool.pdm.scripts]
-dev = "uvicorn main:main --host 0.0.0.0 --port 3000 --reload --factory"
-main = "uvicorn main:main --host 0.0.0.0 --port 3000 --workers 1 --factory --no-access-log"
-stdio = {cmd = "python -m main", env = {"SERVER_MODE" = "stdio"}}
+dev = {cmd = "python main.py", env = {"SERVER_MODE" = "http"}}
+main = {cmd = "python main.py", env = {"SERVER_MODE" = "http"}}
+stdio = {cmd = "python main.py", env = {"SERVER_MODE" = "stdio"}}
 lint = "ruff check src/ tests/"
 format = "ruff format src/ tests/"
 test = "pytest tests/ -v --cov=src --cov-report=term-missing"

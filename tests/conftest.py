@@ -1,7 +1,6 @@
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock
 
 import pytest
-from fastapi.testclient import TestClient
 
 from client.ansible_client import AnsibleClient
 from config import Settings
@@ -14,7 +13,7 @@ def mock_config():
         ANSIBLE_TOKEN="test-token-123",
         ANSIBLE_VERIFY_SSL=False,
         ANSIBLE_TIMEOUT=5,
-        SERVER_MODE="single-worker",
+        SERVER_MODE="http",
         DD_ENV="test",
     )
 
@@ -38,15 +37,3 @@ def mock_response():
         resp.cookies = {}
         return resp
     return _make_response
-
-
-@pytest.fixture
-def test_app(mock_config):
-    with patch("web_server.create_mcp_server") as mock_mcp:
-        mock_mcp_instance = MagicMock()
-        mock_mcp_instance.sse_app.return_value = MagicMock()
-        mock_mcp.return_value = mock_mcp_instance
-
-        from web_server import init_web_server
-        app = init_web_server(mock_config)
-        return TestClient(app)
