@@ -3,8 +3,8 @@ from unittest.mock import MagicMock, patch
 import pytest
 from fastapi.testclient import TestClient
 
-from src.client.ansible_client import AnsibleClient
-from src.config import Settings
+from client.ansible_client import AnsibleClient
+from config import Settings
 
 
 @pytest.fixture
@@ -42,11 +42,11 @@ def mock_response():
 
 @pytest.fixture
 def test_app(mock_config):
-    with patch("src.web_server.create_mcp_server") as mock_mcp:
+    with patch("web_server.create_mcp_server") as mock_mcp:
         mock_mcp_instance = MagicMock()
         mock_mcp_instance.sse_app.return_value = MagicMock()
         mock_mcp.return_value = mock_mcp_instance
 
-        from src.web_server import init_web_server
+        from web_server import init_web_server
         app = init_web_server(mock_config)
         return TestClient(app)

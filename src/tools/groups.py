@@ -1,9 +1,9 @@
 import json
 
-from src.client.pagination import handle_pagination
-from src.services.base_service import BaseCRUDService
-from src.services.group_service import GroupService
-from src.utils.validators import validate_json
+from client.pagination import handle_pagination
+from services.base_service import BaseCRUDService
+from services.group_service import GroupService
+from utils.validators import validate_json
 
 
 def register_group_tools(mcp, service: BaseCRUDService, group_ops: GroupService):

@@ -3,8 +3,8 @@ from unittest.mock import MagicMock
 import pytest
 from mcp.server.fastmcp import FastMCP
 
-from src.services.base_service import BaseCRUDService
-from src.tools.inventories import register_inventory_tools
+from services.base_service import BaseCRUDService
+from tools.inventories import register_inventory_tools
 
 
 @pytest.fixture
@@ -37,7 +37,7 @@ class TestInventoryTools:
         }
 
         # Get the tool function directly
-        from src.tools.inventories import register_inventory_tools
+        from tools.inventories import register_inventory_tools
         mcp2 = FastMCP("test2")
         client2 = MagicMock()
         client2.__enter__ = MagicMock(return_value=client2)

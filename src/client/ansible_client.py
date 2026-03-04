@@ -3,7 +3,7 @@ import re
 
 import requests
 
-from src.config import Settings
+from config import Settings
 
 
 class AnsibleClient:

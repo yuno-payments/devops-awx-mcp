@@ -1,6 +1,6 @@
 import json
 
-from src.services.base_service import BaseCRUDService
+from services.base_service import BaseCRUDService
 
 
 def register_inventory_tools(mcp, service: BaseCRUDService):

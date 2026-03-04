@@ -1,4 +1,4 @@
-from src.client.ansible_client import AnsibleClient
+from client.ansible_client import AnsibleClient
 
 
 def handle_pagination(client: AnsibleClient, endpoint: str, params: dict = None) -> list[dict]:

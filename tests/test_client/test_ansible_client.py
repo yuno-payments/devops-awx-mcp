@@ -3,8 +3,8 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from src.client.ansible_client import AnsibleClient
-from src.config import Settings
+from client.ansible_client import AnsibleClient
+from config import Settings
 
 
 @pytest.fixture

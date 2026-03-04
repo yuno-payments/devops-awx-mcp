@@ -1,6 +1,6 @@
-from src.client.ansible_client import AnsibleClient
-from src.config import Settings
-from src.services import (
+from client.ansible_client import AnsibleClient
+from config import Settings
+from services import (
     AdHocService,
     BaseCRUDService,
     GroupService,
@@ -9,20 +9,20 @@ from src.services import (
     SystemService,
     WorkflowService,
 )
-from src.tools.ad_hoc import register_ad_hoc_tools
-from src.tools.credentials import register_credential_tools
-from src.tools.groups import register_group_tools
-from src.tools.hosts import register_host_tools
-from src.tools.inventories import register_inventory_tools
-from src.tools.job_templates import register_job_template_tools
-from src.tools.jobs import register_job_tools
-from src.tools.organizations import register_organization_tools
-from src.tools.projects import register_project_tools
-from src.tools.schedules import register_schedule_tools
-from src.tools.system import register_system_tools
-from src.tools.teams import register_team_tools
-from src.tools.users import register_user_tools
-from src.tools.workflows import register_workflow_tools
+from tools.ad_hoc import register_ad_hoc_tools
+from tools.credentials import register_credential_tools
+from tools.groups import register_group_tools
+from tools.hosts import register_host_tools
+from tools.inventories import register_inventory_tools
+from tools.job_templates import register_job_template_tools
+from tools.jobs import register_job_tools
+from tools.organizations import register_organization_tools
+from tools.projects import register_project_tools
+from tools.schedules import register_schedule_tools
+from tools.system import register_system_tools
+from tools.teams import register_team_tools
+from tools.users import register_user_tools
+from tools.workflows import register_workflow_tools
 
 
 def register_all_tools(mcp, config: Settings):

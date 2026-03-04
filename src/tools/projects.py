@@ -1,8 +1,8 @@
 import json
 
-from src.services.base_service import BaseCRUDService
-from src.services.project_service import ProjectService
-from src.utils.validators import validate_scm_type
+from services.base_service import BaseCRUDService
+from services.project_service import ProjectService
+from utils.validators import validate_scm_type
 
 
 def register_project_tools(mcp, service: BaseCRUDService, project_ops: ProjectService):

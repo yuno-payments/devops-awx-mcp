@@ -2,7 +2,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from src.services.base_service import BaseCRUDService
+from services.base_service import BaseCRUDService
 
 
 @pytest.fixture

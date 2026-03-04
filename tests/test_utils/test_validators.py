@@ -1,6 +1,6 @@
 import pytest
 
-from src.utils.validators import validate_json, validate_scm_type, validate_verbosity
+from utils.validators import validate_json, validate_scm_type, validate_verbosity
 
 
 class TestValidateJson:

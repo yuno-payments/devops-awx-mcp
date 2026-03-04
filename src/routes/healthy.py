@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from src.controllers.healthy_controller import get_health, get_liveness, get_root
+from controllers.healthy_controller import get_health, get_liveness, get_root
 
 router = APIRouter()
 

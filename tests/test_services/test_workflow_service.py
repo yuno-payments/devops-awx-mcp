@@ -2,7 +2,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from src.services.workflow_service import WorkflowService
+from services.workflow_service import WorkflowService
 
 
 @pytest.fixture

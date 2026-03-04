@@ -1,7 +1,7 @@
 import json
 
-from src.services.ad_hoc_service import AdHocService
-from src.utils.validators import validate_verbosity
+from services.ad_hoc_service import AdHocService
+from utils.validators import validate_verbosity
 
 
 def register_ad_hoc_tools(mcp, ad_hoc_ops: AdHocService):

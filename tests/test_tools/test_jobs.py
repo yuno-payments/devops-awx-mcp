@@ -3,8 +3,8 @@ from unittest.mock import MagicMock
 import pytest
 from mcp.server.fastmcp import FastMCP
 
-from src.services.job_service import JobService
-from src.tools.jobs import register_job_tools
+from services.job_service import JobService
+from tools.jobs import register_job_tools
 
 
 @pytest.fixture

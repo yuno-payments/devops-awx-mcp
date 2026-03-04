@@ -1,6 +1,6 @@
 from unittest.mock import MagicMock, call
 
-from src.client.pagination import handle_pagination
+from client.pagination import handle_pagination
 
 
 class TestHandlePagination:

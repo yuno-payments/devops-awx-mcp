@@ -1,8 +1,8 @@
 import json
 
-from src.services.base_service import BaseCRUDService
-from src.services.workflow_service import WorkflowService
-from src.utils.validators import validate_json
+from services.base_service import BaseCRUDService
+from services.workflow_service import WorkflowService
+from utils.validators import validate_json
 
 
 def register_workflow_tools(mcp, service: BaseCRUDService, workflow_ops: WorkflowService):

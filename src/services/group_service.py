@@ -1,4 +1,4 @@
-from src.client.ansible_client import AnsibleClient
+from client.ansible_client import AnsibleClient
 
 
 class GroupService:

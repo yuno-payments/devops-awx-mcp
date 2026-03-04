@@ -1,6 +1,6 @@
 import json
 
-from src.services.system_service import SystemService
+from services.system_service import SystemService
 
 
 def register_system_tools(mcp, system_ops: SystemService):

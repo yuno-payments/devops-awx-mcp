@@ -1,9 +1,9 @@
 import json
 
-from src.client.ansible_client import AnsibleClient
-from src.client.pagination import handle_pagination
-from src.services.base_service import BaseCRUDService
-from src.utils.validators import validate_json
+from client.ansible_client import AnsibleClient
+from client.pagination import handle_pagination
+from services.base_service import BaseCRUDService
+from utils.validators import validate_json
 
 
 def register_host_tools(mcp, service: BaseCRUDService, client: AnsibleClient):

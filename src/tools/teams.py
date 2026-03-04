@@ -1,8 +1,8 @@
 import json
 
-from src.client.ansible_client import AnsibleClient
-from src.client.pagination import handle_pagination
-from src.services.base_service import BaseCRUDService
+from client.ansible_client import AnsibleClient
+from client.pagination import handle_pagination
+from services.base_service import BaseCRUDService
 
 
 def register_team_tools(mcp, service: BaseCRUDService, client: AnsibleClient):

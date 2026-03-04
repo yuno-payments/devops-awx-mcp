@@ -2,7 +2,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from src.services.job_service import JobService
+from services.job_service import JobService
 
 
 @pytest.fixture

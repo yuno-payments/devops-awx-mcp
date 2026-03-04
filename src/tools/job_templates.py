@@ -1,8 +1,8 @@
 import json
 
-from src.services.base_service import BaseCRUDService
-from src.services.job_service import JobService
-from src.utils.validators import validate_json
+from services.base_service import BaseCRUDService
+from services.job_service import JobService
+from utils.validators import validate_json
 
 
 def register_job_template_tools(mcp, service: BaseCRUDService, job_service: JobService):

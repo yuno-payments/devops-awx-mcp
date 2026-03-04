@@ -1,7 +1,7 @@
 import json
 
-from src.services.base_service import BaseCRUDService
-from src.utils.validators import validate_json
+from services.base_service import BaseCRUDService
+from utils.validators import validate_json
 
 
 def register_credential_tools(mcp, service: BaseCRUDService, type_service: BaseCRUDService):

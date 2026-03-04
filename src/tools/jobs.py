@@ -1,6 +1,6 @@
 import json
 
-from src.services.job_service import JobService
+from services.job_service import JobService
 
 
 def register_job_tools(mcp, job_service: JobService):

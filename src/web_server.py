@@ -3,9 +3,9 @@ import logging
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from src.config import Settings
-from src.mcp_server import create_mcp_server
-from src.routes import router
+from config import Settings
+from mcp_server import create_mcp_server
+from routes import router
 
 
 class HealthFilter(logging.Filter):
