@@ -1,0 +1,27 @@
+FROM python:3.12
+WORKDIR /opt/app
+
+RUN apt-get update && apt-get install gcc gnupg gpg git-core wget openssh-client ca-certificates -y && apt-get clean
+
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+# SSH for private deps
+COPY id_rsa /root/.ssh/id_rsa
+RUN chmod 400 /root/.ssh/id_rsa && echo "Host *\n\tStrictHostKeyChecking no\n" >> /root/.ssh/config
+RUN eval `ssh-agent -s` && ssh-add /root/.ssh/id_rsa
+
+COPY requirements.txt ./
+RUN pip install -r requirements.txt
+RUN rm -rf /root/.ssh
+
+# Non-root user
+RUN groupadd -g 61000 msgroup && useradd -g 61000 -l -m -s /bin/bash -u 61000 microservice
+RUN chown -R microservice:msgroup /opt/app
+USER microservice
+
+RUN wget https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
+
+COPY src ./
+
+CMD ["python", "-m", "uvicorn", "main:main", "--host", "0.0.0.0", "--port", "8080", "--workers", "1", "--factory", "--no-access-log"]

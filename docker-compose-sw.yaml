@@ -1,0 +1,12 @@
+services:
+  devops-awx-mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile.single_worker
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      - SERVER_MODE=single-worker
+      - DD_ENV=development

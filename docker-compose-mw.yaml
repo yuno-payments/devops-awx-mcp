@@ -1,0 +1,13 @@
+services:
+  devops-awx-mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile.multi_worker
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    environment:
+      - SERVER_MODE=multi-worker
+      - DD_ENV=production
+      - APM_INSTRUMENTATION=true
