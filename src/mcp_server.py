@@ -6,11 +6,13 @@ from config import Settings
 
 
 def create_mcp_server(config: Settings) -> FastMCP:
+    mcp_path = f"{config.PREFIX_PATH.rstrip('/')}/mcp"
     mcp = FastMCP(
         "devops-awx-mcp",
         host=config.HOST,
         port=config.PORT,
         json_response=True,
+        streamable_http_path=mcp_path,
     )
 
     # Register MCP tools
