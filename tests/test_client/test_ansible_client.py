@@ -48,7 +48,12 @@ class TestAnsibleClientContextManager:
             assert client.token == "pre-existing-token"
 
     def test_enter_without_credentials_skips_auth(self):
-        cfg = Settings(ANSIBLE_BASE_URL="https://awx.test.local")
+        cfg = Settings(
+            ANSIBLE_BASE_URL="https://awx.test.local",
+            ANSIBLE_USERNAME="",
+            ANSIBLE_PASSWORD="",
+            ANSIBLE_TOKEN="",
+        )
         client = AnsibleClient(cfg)
         with client:
             assert client.token == ""
